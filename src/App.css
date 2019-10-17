@@ -7,7 +7,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("mountain_woods_cabin_log-wallpaper-1366x768.jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: 'Courier New', Courier, monospace;
+
 }
+
+.App-header p{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+}
+
 
 .App-link {
   color: #09d3ac;
