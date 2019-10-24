@@ -1,29 +1,55 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import SanPham from './components/SanPham/SanPham';
+import SinhVien from './components/SinhVien/SinhVien';
+
 
 class App extends Component{
+
+  state = {
+    sinhVien : [
+      { hoten: 'Lionel Messi', tuoi: 35, sothich: 'Ăn nhậu' },
+      { hoten: 'RonalDo', tuoi: 32, sothich: 'Code' },
+      { hoten: 'Neymar JR', tuoi: 30, sothich: 'Giả vờ ngã' }
+    ],
+    lop : '18CDTH11'
+  }
+
+  changeClick = () => {
+    this.setState(
+      {
+        sinhVien : [
+          { hoten: 'Salah', tuoi: 5, sothich: 'Đá bóng' },
+          { hoten: 'Bale', tuoi: 2, sothich: 'Đá cầu' },
+          { hoten: 'Countinho', tuoi: 10, sothich: 'Hát' }
+        ]
+      }
+    );
+  }
+
   render(){
     return(
       <div className="App">
         <header className="App-header">
-        <h2>Cửa Hàng Điện Thoại ReactJS</h2>
-          <SanPham masanpham="MSP01" tensanpham="Iphone5" gia="10000000VND">
-            <i>Máy chính hãng 100%</i>
-          </SanPham>
-          <SanPham masanpham="MSP02" tensanpham="SamSung" gia="9000000VND">
-          <i>Máy rẻ nhưng tốt</i>
-          </SanPham>
-          <SanPham masanpham="MSP03" tensanpham="Iphone6" gia="7000000VND">
-          <i>Máy lâu năm nhưng vẫn còn ngon</i>
-          </SanPham>
-          <SanPham masanpham="MSP04" tensanpham="Iphone7" gia="5000000VND">
-          <i>Máy nhập từ Mỹ khá oke</i>
-          </SanPham>
-          <SanPham masanpham="MSP05" tensanpham="IphoneX" gia="10000000VND">
-         <i>Dạo này Iphone 11 ra nên IphoneX còn có 10 triệu thôi</i>
-          </SanPham>
+        <h2>ReactJS - {this.state.lop}</h2>
+        <button onClick={this.changeClick}>Change click</button>
+         <SinhVien
+           hoten = {this.state.sinhVien[0].hoten}
+           tuoi = {this.state.sinhVien[0].tuoi} >
+           Sở thích : {this.state.sinhVien[0].sothich}
+         </SinhVien>
+
+         <SinhVien
+           hoten = {this.state.sinhVien[1].hoten}
+           tuoi = {this.state.sinhVien[1].tuoi} >
+           Sở Thích : {this.state.sinhVien[1].sothich}
+         </SinhVien>
+
+         <SinhVien
+           hoten = {this.state.sinhVien[2].hoten}
+           tuoi = {this.state.sinhVien[2].tuoi} >
+           Sở Thích : {this.state.sinhVien[2].sothich}
+         </SinhVien>
         </header>
       </div>
     );
