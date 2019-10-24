@@ -30,3 +30,16 @@
 .App-link {
   color: #09d3ac;
 }
+button{
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+button:hover{
+  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
