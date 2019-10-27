@@ -1,64 +1,46 @@
 import React, {Component} from 'react';
-
 import './App.css';
-import SinhVien from './components/SinhVien/SinhVien';
-
+import SanPham from './components/SanPham/SanPham';
 
 class App extends Component{
 
   state = {
-    sinhVien : [
-      { hoten: 'Lionel Messi', tuoi: 35, sothich: 'Ăn nhậu' },
-      { hoten: 'RonalDo', tuoi: 32, sothich: 'Code' },
-      { hoten: 'Neymar JR', tuoi: 30, sothich: 'Giả vờ ngã' }
-    ],
-    lop : '18CDTH11'
-  }
-
-  changeClick = () => {
-    this.setState(
-      {
-        sinhVien : [
-          { hoten: 'Salah', tuoi: 5, sothich: 'Đá bóng' },
-          { hoten: 'Bale', tuoi: 2, sothich: 'Đá cầu' },
-          { hoten: 'Countinho', tuoi: 10, sothich: 'Hát' }
-        ]
-      }
-    );
+    sanPham : [
+      { masanpham: 'MSP01', tensanpham: 'Iphone5', gia: 3000000+'VND',noidung:'Máy tốt, rẻ'},
+      { masanpham: 'MSP02', tensanpham: 'Iphone6', gia: 4000000+'VND' ,noidung:'Máy 99%'},
+      { masanpham: 'MSP03', tensanpham: 'Iphone7', gia: 5000000+'VND' ,noidung:'Máy nhập từ Mỹ'}
+    ]   
   }
 
   render(){
     return(
       <div className="App">
         <header className="App-header">
-        <h2>ReactJS - {this.state.lop}</h2>
-        <button onClick={this.changeClick}>Change click</button>
-         <SinhVien
-           hoten = {this.state.sinhVien[0].hoten}
-           tuoi = {this.state.sinhVien[0].tuoi} >
-           Sở thích : {this.state.sinhVien[0].sothich}
-         </SinhVien>
+        <h2>ReactJS-State</h2>
+         <SanPham
+           masanpham = {this.state.sanPham[0].masanpham}
+           tensanpham = {this.state.sanPham[0].tensanpham}
+           gia = {this.state.sanPham[0].gia}>
+           Chi tiết : {this.state.sanPham[0].noidung}
+         </SanPham>
 
-         <SinhVien
-           hoten = {this.state.sinhVien[1].hoten}
-           tuoi = {this.state.sinhVien[1].tuoi} >
-           Sở Thích : {this.state.sinhVien[1].sothich}
-         </SinhVien>
+         <SanPham
+           masanpham = {this.state.sanPham[1].masanpham}
+           tensanpham = {this.state.sanPham[1].tensanpham}
+           gia = {this.state.sanPham[1].gia}>
+           Chi tiết : {this.state.sanPham[1].noidung}
+         </SanPham>
 
-         <SinhVien
-           hoten = {this.state.sinhVien[2].hoten}
-           tuoi = {this.state.sinhVien[2].tuoi} >
-           Sở Thích : {this.state.sinhVien[2].sothich}
-         </SinhVien>
+         <SanPham
+           masanpham = {this.state.sanPham[2].masanpham}
+           tensanpham = {this.state.sanPham[2].tensanpham}
+           gia = {this.state.sanPham[2].gia}>
+           Chi tiết : {this.state.sanPham[2].noidung}
+         </SanPham>
         </header>
       </div>
     );
   }
 }
-
-
-
-
-
 
 export default App;
